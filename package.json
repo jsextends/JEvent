@@ -1,0 +1,38 @@
+{
+  "name": "j19-event",
+  "version": "1.0.0",
+  "description": "this is js event realize",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JSextend19/j19-event.git"
+  },
+  "keywords": [
+    "javascript",
+    "event",
+    "dispatch",
+    "customEvent"
+  ],
+  "author": "usernameisregistered",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JSextend19/j19-event/issues"
+  },
+  "homepage": "https://github.com/JSextend19/j19-event#readme",
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-arrow-functions": "^7.2.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
+  },
+  "dependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.6.3",
+    "babel-loader": "^8.0.0"
+  }
+}

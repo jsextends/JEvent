@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>测试Event类型</title>
+    <script src="./../dist/event.min.js"></script>
+</head>
+<body>
+    <script>
+        let TpeEvent = this.TpeEvent;
+        let customEvent = new TpeEvent.Event("customEvent")
+        let customError = new TpeEvent.ErrorEvent("customEvent")
+
+        let container = document.createElement("div")
+
+        TpeEvent.DispatchEvent.init(container)
+
+        container.addistener("customEvent",()=>{
+            console.log(customEvent)
+        })
+
+        container.addListener("error",()=>{
+            console.log(1)
+        })
+        container.assignEvent(customEvent)
+        /**
+         *  注意 所有ErrorEvent的type为error
+         */
+        container.assignEvent(customError)
+
+    </script>
+</body>
+</html>
