@@ -34,5 +34,8 @@
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.6.3",
     "babel-loader": "^8.0.0"
+  },
+  "directories": {
+    "doc": "doc"
   }
 }
