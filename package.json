@@ -1,5 +1,5 @@
 {
-  "name": "j19-event",
+  "name": "@jsextend19/j19-event",
   "version": "1.0.0",
   "description": "this is js event realize",
   "main": "index.js",
