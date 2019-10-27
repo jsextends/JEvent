@@ -1,6 +1,6 @@
-import {TpeEvent} from "./event"
+import {J19Event} from "./event"
 
-export class TpeDispatchEvent{
+export class J19DispatchEvent{
     /**
      * 普通事件监听组
      * @protected
@@ -21,10 +21,10 @@ export class TpeDispatchEvent{
 	 * 事件初始化
 	 * @method init
 	 * @static
-	 * @param {TpeEvent|Event} target
+	 * @param {J19Event|Event} target
 	 **/
 	 static init(target){
-	 	let o = new TpeDispatchEvent()
+	 	let o = new J19DispatchEvent()
         target.addListener = o.addEventListener;
 		target.on = o.on;
 		target.removeListener = target.off =  o.removeEventListener;
@@ -138,7 +138,7 @@ export class TpeDispatchEvent{
         if (typeof eventObj == "string") {
 			let listeners = this._listeners;
 			if (!bubbles && (!listeners || !listeners[eventObj])) { return true }
-			eventObj = new TpeEvent(eventObj, bubbles, cancelable);
+			eventObj = new J19Event(eventObj, bubbles, cancelable);
 		} else if (eventObj.target && eventObj.clone) {
 			eventObj = eventObj.clone();
 		}
@@ -187,7 +187,7 @@ export class TpeDispatchEvent{
     /**
 	 * 事件分发
 	 * @method _dispatchEvent
-	 * @param {Object | TpeEvent} eventObj
+	 * @param {Object | J19Event} eventObj
 	 * @param {Object} eventPhase
 	 * @protected
 	 **/

@@ -1,6 +1,6 @@
-import {TpeEvent} from "./event"
+import {J19Event} from "./event"
 
-export class TpeErrorEvent extends TpeEvent{
+export class J19ErrorEvent extends J19Event{
     /**
      * 错误标题
      * @property title
@@ -39,10 +39,10 @@ export class TpeErrorEvent extends TpeEvent{
     /**
 	 * 复制一个相同类型的事件
 	 * @method clone
-	 * @return {TpeErrorEvent}
+	 * @return {J19ErrorEvent}
 	 **/
 	clone(){
-		return new TpeErrorEvent(this.title,this.message,this.data);
+		return new J19ErrorEvent(this.title,this.message,this.data);
     }
     /**
 	 * 

@@ -1,4 +1,4 @@
-export class TpeEvent{
+export class J19Event{
     /**
      * 事件类型
      * @property type
@@ -137,10 +137,10 @@ export class TpeEvent{
     /**
 	 * 复制一个相同类型的事件
 	 * @method clone
-	 * @return {TpeEvent}
+	 * @return {J19vent}
 	 **/
 	clone(){
-		return new TpeEvent(this.type, this.bubbles, this.cancelable);
+		return new J19Event(this.type, this.bubbles, this.cancelable);
     };
 
     /**
@@ -148,7 +148,7 @@ export class TpeEvent{
 	 *
 	 * @method set
 	 * @param {Object} props 
-	 * @return {TpeEvent}
+	 * @return {J19vent}
     */
 	set(props){
 		for (var n in props) { this[n] = props[n]}

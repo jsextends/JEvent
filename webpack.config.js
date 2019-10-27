@@ -13,9 +13,9 @@ module.exports = {
     },
     entry: './src/index.js',
     output: {
-        filename: 'event.min.js',
+        filename: 'j19-event.min.js',
         path: path.resolve(__dirname, 'dist'),
-        library: 'Tpe',
+        library: 'J19',
         libraryTarget: 'umd'
     }
 }
