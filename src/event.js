@@ -1,4 +1,4 @@
-export class J19Event{
+export class Event{
     /**
      * 事件类型
      * @property type
@@ -140,7 +140,7 @@ export class J19Event{
 	 * @return {J19vent}
 	 **/
 	clone(){
-		return new J19Event(this.type, this.bubbles, this.cancelable);
+		return new Event(this.type, this.bubbles, this.cancelable);
     };
 
     /**

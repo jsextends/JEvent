@@ -1,6 +1,6 @@
 {
   "name": "@jsextend19/j19-event",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "this is js event realize",
   "main": "dist/j19-event.min.js",
   "scripts": {

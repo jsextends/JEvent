@@ -1,6 +1,6 @@
-import {J19Event} from "./event"
+import {Event} from "./event"
 
-export class J19DispatchEvent{
+export class DispatchEvent{
     /**
      * 普通事件监听组
      * @protected
@@ -21,17 +21,17 @@ export class J19DispatchEvent{
 	 * 事件初始化
 	 * @method init
 	 * @static
-	 * @param {J19Event|Event} target
+	 * @param {Event|Event} target
 	 **/
 	 static init(target){
-	 	let o = new J19DispatchEvent()
+	 	let o = new DispatchEvent()
         target.addListener = o.addEventListener;
 		target.on = o.on;
 		target.removeListener = target.off =  o.removeEventListener;
 		target.removeAllListeners = o.removeAllEventListeners;
 		target.hasListener = o.hasEventListener;
 		target.assignEvent = o.dispatchEvent;
-		target._assignEvent = o._dispatchEvent;
+		target._dispatchEvent = o._dispatchEvent;
 		target.hasTrigger = o.willTrigger;
     }
 
@@ -138,7 +138,7 @@ export class J19DispatchEvent{
         if (typeof eventObj == "string") {
 			let listeners = this._listeners;
 			if (!bubbles && (!listeners || !listeners[eventObj])) { return true }
-			eventObj = new J19Event(eventObj, bubbles, cancelable);
+			eventObj = new Event(eventObj, bubbles, cancelable);
 		} else if (eventObj.target && eventObj.clone) {
 			eventObj = eventObj.clone();
 		}
@@ -187,7 +187,7 @@ export class J19DispatchEvent{
     /**
 	 * 事件分发
 	 * @method _dispatchEvent
-	 * @param {Object | J19Event} eventObj
+	 * @param {Object | Event} eventObj
 	 * @param {Object} eventPhase
 	 * @protected
 	 **/
