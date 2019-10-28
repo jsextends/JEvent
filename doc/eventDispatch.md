@@ -1,4 +1,4 @@
-### EventDispatch
+### J19DispatchEvent
 
 ### 提供了一些方法来管理队列的事件监听器和分派任务事件
 
@@ -23,7 +23,7 @@
 - hasEventListener 指定指定事件类型是否至少有一个侦听器。
 >> 参数 type String
 >> 返回 如果指定事件至少有一个侦听器，则返回true
-- init static 将EventDispatcher方法混合到目标对象或原型中的静态初始化器。
+- initEvent **static** 将EventDispatcher方法混合到目标对象或原型中的静态初始化器。
 >> 参数 target Object
 >> 返回
 - off removeEventListener方法的快捷方式

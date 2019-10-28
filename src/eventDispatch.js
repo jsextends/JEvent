@@ -1,6 +1,6 @@
-import {Event} from "./event"
+import {J19Event} from "./event"
 
-export class DispatchEvent{
+export class J19DispatchEvent{
     /**
      * 普通事件监听组
      * @protected
@@ -18,13 +18,13 @@ export class DispatchEvent{
     _captureListeners = null;
 
     /**
-	 * 事件初始化
-	 * @method init
+	 * 事件初始化 即将事件绑定到target上
+	 * @method initEvent
 	 * @static
 	 * @param {Event|Event} target
 	 **/
-	 static init(target){
-	 	let o = new DispatchEvent()
+	 static initEvent(target){
+	 	let o = new J19DispatchEvent()
         target.addListener = o.addEventListener;
 		target.on = o.on;
 		target.removeListener = target.off =  o.removeEventListener;
@@ -40,7 +40,6 @@ export class DispatchEvent{
 	 * @method addEventListener
 	 * @param {String} type 
 	 * @param {Function | Object} listener
-	 * the event is dispatched.
 	 * @param {Boolean} [useCapture] 指定需要移除的 EventListener 函数是否为捕获监听器
 	 * @return {Function | Object} 
 	 **/
@@ -52,10 +51,6 @@ export class DispatchEvent{
 			listeners = this._listeners = this._listeners||{}
 		}
         let arr = listeners[type];
-		if (arr) {
-            this.removeEventListener(type, listener, useCapture)
-        }
-		arr = listeners[type]
 		if (!arr) { 
             listeners[type] = [listener]
         } else { 
@@ -115,7 +110,6 @@ export class DispatchEvent{
 	 * 将所有指定类型的监听器从EventTarget上移除
      * @method removeAllEventListeners
 	 * @param {String} type
-     * 
 	 **/
     removeAllEventListeners(type){
         if (!type) { 
@@ -137,8 +131,8 @@ export class DispatchEvent{
     dispatchEvent(eventObj, bubbles = false , cancelable = false){
         if (typeof eventObj == "string") {
 			let listeners = this._listeners;
-			if (!bubbles && (!listeners || !listeners[eventObj])) { return true }
-			eventObj = new Event(eventObj, bubbles, cancelable);
+			if (!listeners || !listeners[eventObj]) { return true }
+			eventObj = new J19Event(eventObj, bubbles, cancelable);
 		} else if (eventObj.target && eventObj.clone) {
 			eventObj = eventObj.clone();
 		}
@@ -187,7 +181,7 @@ export class DispatchEvent{
     /**
 	 * 事件分发
 	 * @method _dispatchEvent
-	 * @param {Object | Event} eventObj
+	 * @param {Object | J19Event | event} eventObj
 	 * @param {Object} eventPhase
 	 * @protected
 	 **/
@@ -210,6 +204,7 @@ export class DispatchEvent{
 		if (eventObj && listeners && (arr = listeners[eventObj.type]) && (l=arr.length)) {
 			try { eventObj.currentTarget = this } catch (e) {}
 			try { eventObj.eventPhase = eventPhase | 0 } catch (e) {}
+
 			eventObj.removed = false;
 
 			arr = arr.slice();

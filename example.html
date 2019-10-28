@@ -9,18 +9,20 @@
 </head>
 <body>
     <script>
-        let customEvent = new J19.Event("customEvent")
-        let customError = new J19.ErrorEvent("customEvent")
+        let customEvent = new J19.J19Event("customEvent")
+        let customError = new J19.J19ErrorEvent("customError")
 
         let container = document.createElement("div")
 
-        J19.DispatchEvent.init(container)
+        J19.J19DispatchEvent.initEvent(container)
         container.addListener("customEvent",()=>{
             console.log(customEvent)
+            console.log(customEvent.toString())
         })
 
         container.addListener("error",()=>{
             console.log(customError)
+            console.log(customError.toString())
         })
         container.assignEvent(customEvent)
         /**
