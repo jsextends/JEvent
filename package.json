@@ -1,6 +1,6 @@
 {
   "name": "@jsextend19/j19-event",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "这是一个javascript事件的实现",
   "main": "dist/j19-event.min.js",
   "scripts": {
