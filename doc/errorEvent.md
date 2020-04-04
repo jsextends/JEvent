@@ -1,7 +1,7 @@
-### ErrorEvent 
+### J19ErrorEvent 
 
 ### 错误事件对象
-### 继承自 [Event](./Event.md) 
+### 继承自 [J19Event](./Event.md) 
 
 ### 构造函数
 > title String 错误的标题

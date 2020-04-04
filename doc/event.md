@@ -1,4 +1,4 @@
-### Event 
+### J19Event 
 
 ### 事件对象
 
@@ -26,17 +26,14 @@
 ### 方法
 + clone 返回事件实例的克隆
 >> 参数 
->> 返回 Event 返回事件实例的克隆
+>> 返回 J19Event 返回事件实例的克隆
 + preventDefault 调用了preventDefault()的可取消事件将取消与该事件关联的默认行为
 >> 参数 
 >> 返回 
 + remove 设置removed为true
 >> 参数 
 >> 返回 
-+ set 用于设置实例上的属性
->> 参数 props Object
->> 返回 
-+ stopImmediatePropagation 将Event/propagationStopped和Event/immediatePropagationStopped设置为true
++ stopImmediatePropagation 将J19Event/propagationStopped和J19Event/immediatePropagationStopped设置为true
 >> 参数 
 >> 返回 
 + stopPropagation 设置事件/传播停止为真
