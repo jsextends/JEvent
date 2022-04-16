@@ -13,9 +13,8 @@ module.exports = {
     },
     entry: './src/index.js',
     output: {
-        filename: 'j19-event.min.js',
+        filename: 'jevent.min.js',
         path: path.resolve(__dirname, 'dist'),
-        library: 'J19',
         libraryTarget: 'umd'
     }
 }

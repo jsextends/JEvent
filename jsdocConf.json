@@ -1,0 +1,26 @@
+{
+    "tags": {
+        "allowUnknownTags": true
+    },
+    "source": {
+        "include": [
+            "./src"
+        ],
+        "includePattern": ".+\\.js$",
+        "excludePattern": "(^|\\/|\\\\)_",
+        "exclude": [
+            "./src/constant.js"
+        ]
+    },
+    "opts": {
+        "encoding": "utf8",
+        "destination": "./doc"
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false,
+        "default": {
+            "outputSourceFiles": false
+        }
+    }
+}

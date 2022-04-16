@@ -1,34 +1,33 @@
-/**
- * 自定义事件 
- * 属性来源参看 https://developer.mozilla.org/zh-CN/docs/Web/API/Event
- */
-export class J19Event {
+import {
+    EVENT_NONE
+} from "./constant";
 
+/**
+ * Class JEvent.
+ */
+export class JEvent {
     /**
-     * 指示事件是否通过可以冒泡
+     * 表明当前事件是否会向DOM树上层元素冒泡
      * @property bubbles
      * @type Boolean
      * @default false
-     * @readonly
-    */
+     */
     bubbles = false
 
     /**
-     * 事件的默认行为是否可以被取消,
+     * 表示该事件能否被取消,
      * @property cancelable
      * @type Boolean
      * @default false
-     * @readonly
-    */
+     */
     cancelable = false
 
     /**
-    * 正在从中分派冒泡事件的当前目标
-    * @property currentTarget
-    * @type Object
-    * @default null
-    * @readonly
-   */
+     * 标识是当事件沿着DOM触发时事件的当前目标
+     * @property currentTarget
+     * @type EventTarget 
+     * @default null
+     */
     currentTarget = null
 
     /**
@@ -36,34 +35,31 @@ export class J19Event {
      * @property defaultPrevented
      * @type Boolean
      * @default false
-     * @readonly
-    */
+     */
     defaultPrevented = false;
 
     /**
-      * 对于冒泡事件，这表示当前事件阶段
-      * @property eventPhase
-      * @type Number
-      * @default 0
-      * @readonly
+     * 表示事件流当前处于哪一个阶段
+     * @property eventPhase
+     * @type Number
+     * @default 0
      */
-    eventPhase = 0
+    eventPhase = EVENT_NONE;
 
     /**
-      * 生成事件的对象
-      * @property target
-      * @type Object
-      * @default null
-      * @readonly
+     * 生成事件的对象
+     * @property target
+     * @type Object
+     * @default null
+     * @readonly
      */
     target = null
 
     /**
-      * 时间的创建时间
-      * @property timeStamp
-      * @type Number
-      * @default Date.now()
-      * @readonly
+     * 时间的创建时间
+     * @property timeStamp
+     * @type Number
+     * @default Date.now
      */
     timeStamp = Date.now()
 
@@ -80,87 +76,58 @@ export class J19Event {
      * @type Boolean
      * @default false
      * @readonly
-    */
+     */
     propagationStopped = false;
-	/**
+    
+    /**
      * 返回是否阻止事件冒泡并且阻止相同事件的其他侦听器被调用。
      * on this event.
      * @property immediatePropagationStopped
      * @type Boolean
      * @default false
      * @readonly
-    */
+     */
     immediatePropagationStopped = false;
 
     /**
-     *事件是否被移除
-     * @property removed
-     * @type Boolean
-     * @default false
-     * @readonly
-    */
-    removed = false;
-
-    /**
      * 构造方法
-     * @param type {string}
-     * @param bubbles {boolean}
-     * @param cancelable {boolean}
+     * @param { String } type 表示所创建事件的名称
+     * @param { EventInit } eventInit
      */
-    constructor(type, bubbles = false, cancelable = false) {
+    constructor(type, eventInit) {
         this.type = type
-        this.bubbles = bubbles
-        this.cancelable = cancelable
+        this.bubbles = eventInit?.bubbles ?? this.bubbles
+        this.cancelable = eventInit?.cancelable ?? this.cancelable
+        this.composed = eventInit?.composed ?? this.composed
     }
 
     /**
-	 * 如果事件的默认行为可以被取消则取消 并设置defaultPrevented为true
-	 * @method preventDefault
-	 **/
+     * 如果事件的默认行为可以被取消则取消 并设置defaultPrevented为true
+     **/
     preventDefault() {
         this.defaultPrevented = this.cancelable && true;
     }
 
     /**
-	 * 阻止捕获和冒泡阶段中当前事件的进一步传播。
-	 * @method stopPropagation
-	 **/
+     * 阻止捕获和冒泡阶段中当前事件的进一步传播。
+     **/
     stopPropagation() {
         this.propagationStopped = true
     }
 
     /**
      * 设置阻止事件被其他侦听器被调用并且设置事件不允许被捕获或者冒泡。
-	 * @method stopImmediatePropagation
-	 **/
+     **/
     stopImmediatePropagation() {
         this.stopPropagation()
         this.immediatePropagationStopped = true;
     };
 
     /**
-	 * 移除事件
-	 * @method remove
-	 **/
-    remove() {
-        this.removed = true;
-    };
-
-    /**
-	 * 复制一个相同类型的事件
-	 * @method clone
-	 * @return {J19vent}
-	 **/
-    clone() {
-        return new J19Event(this.type, this.bubbles, this.cancelable);
-    };
-
-    /**
-	 * 
-	 * @method toString
-	 * @return {String}
-	 **/
+     * 
+     * @return {String}
+     **/
     toString() {
-        return "[J19Event (type=" + this.type + ")]";
+        return "[JEvent (type=" + this.type + ")]";
     }
 }

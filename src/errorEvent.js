@@ -1,6 +1,10 @@
-import {J19Event} from "./event"
+import { JEvent } from "./event"
 
-export class J19ErrorEvent extends J19Event{
+/**
+ * Class JErrorEvent.
+ * @extends JEvent
+ */
+export class JErrorEvent extends JEvent {
 
     /**
      * 错误标题
@@ -16,7 +20,7 @@ export class J19ErrorEvent extends J19Event{
      * @type String
      * @readonly
      */
-    message = null 
+    message = null
 
     /**
      * 其他可能需要的数据 可能和错误有关可能和错误无关
@@ -31,8 +35,8 @@ export class J19ErrorEvent extends J19Event{
      * @param message {string}
      * @param data {object}
      */
-    constructor(title, message = null, data = null){
-        super("error")
+    constructor(title, message = null, data = null) {
+        super("JError")
 
         this.title = title
 
@@ -42,19 +46,10 @@ export class J19ErrorEvent extends J19Event{
     }
 
     /**
-	 * 复制一个相同类型的事件
-	 * @method clone
-	 * @return {J19ErrorEvent}
-	 **/
-	clone(){
-		return new J19ErrorEvent(this.title,this.message,this.data);
-    }
-    /**
-	 * 
-	 * @method toString
-	 * @return {String}
-	 **/
-    toString(){
-        return  `[J19Event (type=error)] title=${this.title};message=${this.message}`
+     *
+     * @return {String}
+     **/
+    toString() {
+        return `[JEvent] type=${this.type} title=${this.title};message=${this.message}`
     }
 }

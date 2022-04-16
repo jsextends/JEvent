@@ -1,10 +1,11 @@
 {
   "name": "@jsextend19/j19-event",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "这是一个javascript事件的实现",
-  "main": "dist/j19-event.min.js",
+  "main": "dist/jevent.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build:doc": "jsdoc -c jsdocConf.json",
     "build:prod": "webpack",
     "build:dev": "webpack --config webpack.config.dev.js"
   },
@@ -25,12 +26,15 @@
   "bugs": {
     "url": "https://github.com/JSextend19/j19-event/issues"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "homepage": "https://github.com/JSextend19/j19-event#readme",
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-transform-arrow-functions": "^7.2.0",
+    "jsdoc": "^3.6.10",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9"
   },
