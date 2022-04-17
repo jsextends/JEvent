@@ -11,12 +11,12 @@
 
 ---
 
-## 安装  npm i @jsextend19/j19-event
+## 安装  npm i @jsextend19/jevent
 
 ## 引入
 
 ```
-import { JEvent , JErrorEvent , JEventTarget } from "@jsextend19/j19-event"
+import { JEvent , JErrorEvent , JEventTarget } from "@jsextend19/jevent"
 
 ```
 
@@ -43,3 +43,11 @@ import { JEvent , JErrorEvent , JEventTarget } from "@jsextend19/j19-event"
 [[Call]] - 执行与此对象关联的代码。通过函数调用表达式调用。内部方法的参数是一个this值和一个包含通过调用表达式传递给函数的参数的列表。
 
 绑定函数也可以使用new运算符构造，它会表现为目标函数已经被构建完毕了似的。提供的this值会被忽略，但前置参数仍会提供给模拟函数。
+
+## version
+| 版本 | 描述 |
+| - | - | - | 
+| 2.0.0 | 1.文件同步迁移到**gitee**[JEvent](https://gitee.com/lichanghong320/JEvent) 2. 包从jsextend19组织中迁出 3.修改命名空间为JEvent | 
+
+## 版本1 请移步 
+[j19-event](https://github.com/JSextend19/j19-event)
