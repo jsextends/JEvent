@@ -15,7 +15,8 @@
 ## v2.0.0 
 + 修改时间 2022-04-15
 + 修改命名空间为JEvent 
-+ 文件同步迁移到**gitee**
++ 文件同步迁移到**gitee**[JEvent](https://gitee.com/lichanghong320/JEvent)
++ 文件从jsextend19组织中迁出
 
 
 
