@@ -11,18 +11,21 @@
 
 ---
 
-## 安装  npm i @jsextend19/jevent
+## 安装  npm i @jsextends/jevent
 
 ## 引入
 
 ```
-import { JI18n } from "@jsextend19/jevent"
+import { JEvent, JErrorEvent, JEventTarget } from "@jsextends/jevent"
 
 ```
 
 ## 文档
 
 [doc](https://github.com/jsextends/JEvent/wiki)
+
+## 示例
+
 
 
 ## 注意
