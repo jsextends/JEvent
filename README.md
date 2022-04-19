@@ -25,7 +25,7 @@ import { JEvent, JErrorEvent, JEventTarget } from "@jsextends/jevent"
 [doc](https://github.com/jsextends/JEvent/wiki)
 
 ## 示例
-
+[示例](./example.html)
 
 
 ## 注意
