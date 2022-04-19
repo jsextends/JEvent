@@ -1,6 +1,7 @@
 const path = require('path')
+const process = require("process")
 module.exports = {
-    mode: "production",
+    mode: process.env.NODE_ENV,
     module: {
         rules: [{
             test: /\.(js|jsx)$/,
@@ -13,7 +14,7 @@ module.exports = {
     },
     entry: './src/index.js',
     output: {
-        filename: 'jevent.min.js',
+        filename: process.env.NODE_ENV === "production" ? "jevent.min.js" : "jevent.js",
         path: path.resolve(__dirname, 'dist'),
         libraryTarget: 'umd'
     }

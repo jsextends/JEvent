@@ -1,4 +1,4 @@
-# j19-event
+# JEvent
 这是一个关于event的实现
 
 ---
@@ -16,9 +16,13 @@
 ## 引入
 
 ```
-import { JEvent , JErrorEvent , JEventTarget } from "@jsextend19/jevent"
+import { JI18n } from "@jsextend19/jevent"
 
 ```
+
+## 文档
+
+[doc](https://github.com/jsextends/JEvent/wiki)
 
 
 ## 注意
@@ -37,17 +41,10 @@ import { JEvent , JErrorEvent , JEventTarget } from "@jsextend19/jevent"
 |Event.BUBBLING_PHASE	|3	|事件对象逆向向上传播回目标元素的祖先元素, 从父亲元素开始，并且最终到达包含元素 Window. 这就是冒泡，并且只有Event.bubbles 值为true的时候才会发生。 为这个阶段注册的Event listeners 在这个过程中被触发|
 
 ### 绑定函数[bound function，BF]
-[[BoundTargetFunction]] - 包装的函数对象
-[[BoundThis]] - 在调用包装函数时始终作为this值传递的值。
-[[BoundArguments]] - 列表，在对包装函数做任何调用都会优先用列表元素填充参数列表。
-[[Call]] - 执行与此对象关联的代码。通过函数调用表达式调用。内部方法的参数是一个this值和一个包含通过调用表达式传递给函数的参数的列表。
+**BoundTargetFunction** - 包装的函数对象
+**BoundThis** - 在调用包装函数时始终作为this值传递的值。
+**BoundArguments** - 列表，在对包装函数做任何调用都会优先用列表元素填充参数列表。
+**Call** - 执行与此对象关联的代码。通过函数调用表达式调用。内部方法的参数是一个this值和一个包含通过调用表达式传递给函数的参数的列表。
 
 绑定函数也可以使用new运算符构造，它会表现为目标函数已经被构建完毕了似的。提供的this值会被忽略，但前置参数仍会提供给模拟函数。
 
-## version
-| 版本 | 描述 |
-| - | - | - | 
-| 2.0.0 | 1.文件同步迁移到**gitee**[JEvent](https://gitee.com/lichanghong320/JEvent) 2. 包从jsextend19组织中迁出 3.修改命名空间为JEvent | 
-
-## 版本1 请移步 
-[j19-event](https://github.com/JSextend19/j19-event)
