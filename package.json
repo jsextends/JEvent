@@ -1,6 +1,6 @@
 {
   "name": "@jsextends/jevent",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "这是一个javascript事件的实现",
   "main": "dist/jevent.min.js",
   "scripts": {
